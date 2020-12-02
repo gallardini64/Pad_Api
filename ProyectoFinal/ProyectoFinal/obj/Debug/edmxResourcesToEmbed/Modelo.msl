@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="videojuegosDBModelStoreContainer" CdmEntityContainer="videojuegosDBEntities">
+    <EntitySetMapping Name="copias">
+      <EntityTypeMapping TypeName="videojuegosDBModel.copias">
+        <MappingFragment StoreEntitySet="copias">
+          <ScalarProperty Name="copias_id" ColumnName="copias_id" />
+          <ScalarProperty Name="juego_id" ColumnName="juego_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="existencias">
+      <EntityTypeMapping TypeName="videojuegosDBModel.existencias">
+        <MappingFragment StoreEntitySet="existencias">
+          <ScalarProperty Name="existencia_id" ColumnName="existencia_id" />
+          <ScalarProperty Name="existencia_cantidad" ColumnName="existencia_cantidad" />
+          <ScalarProperty Name="existencia_precio" ColumnName="existencia_precio" />
+          <ScalarProperty Name="juego_id" ColumnName="juego_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lineasventa">
+      <EntityTypeMapping TypeName="videojuegosDBModel.lineasventa">
+        <MappingFragment StoreEntitySet="lineasventa">
+          <ScalarProperty Name="lineaventa_id" ColumnName="lineaventa_id" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="copias_id" ColumnName="copias_id" />
+          <ScalarProperty Name="ventas_id" ColumnName="ventas_id" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuarios">
+      <EntityTypeMapping TypeName="videojuegosDBModel.usuarios">
+        <MappingFragment StoreEntitySet="usuarios">
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="contraseña" ColumnName="contraseña" />
+          <ScalarProperty Name="nickname" ColumnName="nickname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ventas">
+      <EntityTypeMapping TypeName="videojuegosDBModel.ventas">
+        <MappingFragment StoreEntitySet="ventas">
+          <ScalarProperty Name="ventas_id" ColumnName="ventas_id" />
+          <ScalarProperty Name="venta_fecha" ColumnName="venta_fecha" />
+          <ScalarProperty Name="ventas_total" ColumnName="ventas_total" />
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="desarrolladores">
+      <EntityTypeMapping TypeName="videojuegosDBModel.desarrolladores">
+        <MappingFragment StoreEntitySet="desarrolladores">
+          <ScalarProperty Name="desarrollador_id" ColumnName="desarrollador_id" />
+          <ScalarProperty Name="desarrollador_fecha_fundacion" ColumnName="desarrollador_fecha_fundacion" />
+          <ScalarProperty Name="desarrollador_razonsocial" ColumnName="desarrollador_razonsocial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="distribudores">
+      <EntityTypeMapping TypeName="videojuegosDBModel.distribudores">
+        <MappingFragment StoreEntitySet="distribudores">
+          <ScalarProperty Name="distribuidor_id" ColumnName="distribuidor_id" />
+          <ScalarProperty Name="distribuidor_fecha_fundacion" ColumnName="distribuidor_fecha_fundacion" />
+          <ScalarProperty Name="distribuidor_razonsocial" ColumnName="distribuidor_razonsocial" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="etiquetas">
+      <EntityTypeMapping TypeName="videojuegosDBModel.etiquetas">
+        <MappingFragment StoreEntitySet="etiquetas">
+          <ScalarProperty Name="etiqueta_id" ColumnName="etiqueta_id" />
+          <ScalarProperty Name="etiqueta_descripcion" ColumnName="etiqueta_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="generos">
+      <EntityTypeMapping TypeName="videojuegosDBModel.generos">
+        <MappingFragment StoreEntitySet="generos">
+          <ScalarProperty Name="genero_id" ColumnName="genero_id" />
+          <ScalarProperty Name="genero_descripcion" ColumnName="genero_descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="juego_etiqueta">
+      <EntityTypeMapping TypeName="videojuegosDBModel.juego_etiqueta">
+        <MappingFragment StoreEntitySet="juego_etiqueta">
+          <ScalarProperty Name="juego_id" ColumnName="juego_id" />
+          <ScalarProperty Name="etiqueta_id" ColumnName="etiqueta_id" />
+          <ScalarProperty Name="juego_etiqueta_id" ColumnName="juego_etiqueta_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="juegos">
+      <EntityTypeMapping TypeName="videojuegosDBModel.juegos">
+        <MappingFragment StoreEntitySet="juegos">
+          <ScalarProperty Name="juego_id" ColumnName="juego_id" />
+          <ScalarProperty Name="titulo" ColumnName="titulo" />
+          <ScalarProperty Name="imagen" ColumnName="imagen" />
+          <ScalarProperty Name="fecha_lanzamiento" ColumnName="fecha_lanzamiento" />
+          <ScalarProperty Name="genero_id" ColumnName="genero_id" />
+          <ScalarProperty Name="desarrollador_id" ColumnName="desarrollador_id" />
+          <ScalarProperty Name="distribuidor_id" ColumnName="distribuidor_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_ValidarUsuario" FunctionName="videojuegosDBModel.Store.SP_ValidarUsuario">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="videojuegosDBModel.SP_ValidarUsuario_Result">
+          <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
